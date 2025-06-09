@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferretería Chavez - Catálogo Completo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Ferretería <span>Chavéz</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#herramientas">Herramientas</a></li>
+                    <li><a href="#electricidad">Electricidad</a></li>
+                    <li><a href="#fontaneria">Fontanería</a></li>
+                    <li><a href="#pintura">Pintura</a></li>
+                    <li><a href="#jardin">Jardín</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#" id="cart-toggle"><i class="fas fa-shopping-cart"></i> Carrito (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Todo para tus proyectos de construcción y reparación</h1>
+            <p>Más de 1,000 productos en stock con los mejores precios del mercado</p>
+            <a href="#herramientas" class="btn">Ver catálogo</a>
+        </div>
+    </section>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="cart-close">×</span>
+            <h2>Carrito de Compras</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <strong>Total: $<span id="cart-total">0.00</span></strong>
+            </div>
+            <button class="btn cart-checkout">Finalizar Compra</button>
+            <button class="btn cart-download">Descargar Ticket</button>
+        </div>
+    </div>
+
+    <main class="container">
+        <h2 class="section-title" id="productos">Nuestro Catálogo Completo</h2>
+
+        <section class="product-category" id="herramientas">
+            <h3 class="section-title">Herramientas Manuales y Eléctricas</h3>
+            <div class="products-grid">
+                <div class="product-card" data-id="1" data-name="Taladro Percutor Inalámbrico 20V + 2 baterías" data-price="1799.80">
+                    <div class="product-discount">15% OFF</div>
+                    <div class="product-img">
+                        <img src="Tala.jpg" alt="Taladro inalámbrico">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Taladro Percutor Inalámbrico 20V + 2 baterías</h4>
+                        <p class="product-price">$1799.80 <span class="product-old-price">$2119.80</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="2" data-name="Juego de Llaves Combinadas 12 piezas" data-price="910.00">
+                    <div class="product-img">
+                        <img src="llaves.jpg" alt="Juego de llaves">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Juego de Llaves Combinadas 12 piezas</h4>
+                        <p class="product-price">$910.00</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="3" data-name="Martillo de Carpintero 16oz mango fibra" data-price="319.80">
+                    <div class="product-img">
+                        <img src="martillo.jpg" alt="Martillo">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Martillo de Carpintero 16oz mango fibra</h4>
+                        <p class="product-price">$319.80</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="4" data-name="Sierra Circular 1200W con láser guía" data-price="2599.80">
+                    <div class="product-discount">10% OFF</div>
+                    <div class="product-img">
+                        <img src="sierra.jpg" alt="Sierra circular">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Sierra Circular 1200W con láser guía</h4>
+                        <p class="product-price">$2599.80 <span class="product-old-price">$2899.80</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="5" data-name="Juego de Destornilladores Profesionales 6pz" data-price="455.00">
+                    <div class="product-img">
+                        <img src="destornillador.jpg" alt="Destornilladores">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Juego de Destornilladores Profesionales 6pz</h4>
+                        <p class="product-price">$455.00</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="6" data-name="Juego de Alicates 3 piezas (corte, punta, presión)" data-price="568.00">
+                    <div class="product-img">
+                        <img src="pinzas.jpg" alt="Alicates">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Juego de Alicates 3 piezas (corte, punta, presión)</h4>
+                        <p class="product-price">$568.00</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="7" data-name="Llave de Tubo Ajustable 10" data-price="378.00">
+                    <div class="product-img">
+                        <img src="llave.jpg" alt="Llave de tubo">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Llave de Tubo Ajustable 10"</h4>
+                        <p class="product-price">$378.00</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="8" data-name="Esmeril Angular 7 2200W con disco" data-price="2999.80">
+                    <div class="product-discount">20% OFF</div>
+                    <div class="product-img">
+                        <img src="esmeril.jpg" alt="Esmeril angular">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Esmeril Angular 7" 2200W con disco</h4>
+                        <p class="product-price">$2999.80 <span class="product-old-price">$3750.00</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-category" id="electricidad">
+            <h3 class="section-title">Material Eléctrico</h3>
+            <div class="products-grid">
+                <div class="product-card" data-id="9" data-name="Cable THW 12AWG x 100m (negro, rojo, verde)" data-price="1700.00">
+                    <div class="product-img">
+                        <img src="cable.jpg" alt="Cable eléctrico">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Cable THW 12AWG x 100m (negro, rojo, verde)</h4>
+                        <p class="product-price">$1700.00</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="10" data-name="Interruptor Simple Blanco 15A" data-price="99.80">
+                    <div class="product-img">
+                        <img src="interructor.jpg" alt="Interruptor">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Interruptor Simple Blanco 15A</h4>
+                        <p class="product-price">$99.80</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="11" data-name="Toma de Corriente Doble 15A" data-price="139.80">
+                    <div class="product-discount">25% OFF</div>
+                    <div class="product-img">
+                        <img src="toma.jpg" alt="Toma de corriente">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Toma de Corriente Doble 15A</h4>
+                        <p class="product-price">$139.80 <span class="product-old-price">$186.40</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="12" data-name="Cinta Aislante de Vinilo 19mm x 20m" data-price="50.00">
+                    <div class="product-img">
+                        <img src="cinta.jpg" alt="Cinta aislante">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Cinta Aislante de Vinilo 19mm x 20m</h4>
+                        <p class="product-price">$50.00</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-category" id="fontaneria">
+            <h3 class="section-title">Fontanería</h3>
+            <div class="products-grid">
+                <div class="product-card" data-id="13" data-name="Tubería PVC 1/2 x 6m" data-price="259.80">
+                    <div class="product-img">
+                        <img src="pvc1.jpg" alt="Tubería PVC">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Tubería PVC 1/2" x 6m</h4>
+                        <p class="product-price">$259.80</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="14" data-name="Llave de Paso 3/4 Bronce" data-price="179.80">
+                    <div class="product-discount">10% OFF</div>
+                    <div class="product-img">
+                        <img src="llavep.jpg" alt="Llave de paso">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Llave de Paso 3/4" Bronce</h4>
+                        <p class="product-price">$179.80 <span class="product-old-price">$199.80</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="15" data-name="Codo PVC 90° 1/2" data-price="25.00">
+                    <div class="product-img">
+                        <img src="codo.jpg" alt="Codo PVC">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Codo PVC 90° 1/2"</h4>
+                        <p class="product-price">$25.00</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="16" data-name="Cinta de Teflón 12mm x 10m" data-price="39.80">
+                    <div class="product-img">
+                        <img src="cinta.jpg" alt="Cinta teflón">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Cinta de Teflón 12mm x 10m</h4>
+                        <p class="product-price">$39.80</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-category" id="pintura">
+            <h3 class="section-title">Pintura y Accesorios</h3>
+            <div class="products-grid">
+                <div class="product-card" data-id="17" data-name="Pintura Acrílica Mate 4L Blanco" data-price="599.80">
+                    <div class="product-discount">20% OFF</div>
+                    <div class="product-img">
+                        <img src="pintura.jpg" alt="Pintura acrílica">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Pintura Acrílica Mate 4L Blanco</h4>
+                        <p class="product-price">$599.80 <span class="product-old-price">$749.80</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="18" data-name="Rodillo de Pintura 9 con Mango" data-price="150.00">
+                    <div class="product-img">
+                        <img src="rodillo.jpg" alt="Rodillo">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Rodillo de Pintura 9" con Mango</h4>
+                        <p class="product-price">$150.00</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="19" data-name="Brocha de Cerda 2 Profesional" data-price="79.80">
+                    <div class="product-img">
+                        <img src="brocha.jpg" alt="Brocha">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Brocha de Cerda 2" Profesional</h4>
+                        <p class="product-price">$79.80</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="20" data-name="Cinta de Pintor 24mm x 50m" data-price="85.00">
+                    <div class="product-img">
+                        <img src="cintaP.jpg" alt="Cinta de pintor">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Cinta de Pintor 24mm x 50m</h4>
+                        <p class="product-price">$85.00</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-category" id="jardin">
+            <h3 class="section-title">Jardín y Exterior</h3>
+            <div class="products-grid">
+                <div class="product-card" data-id="21" data-name="Manguera de Jardín 15m Reforzada" data-price="399.80">
+                    <div class="product-img">
+                        <img src="mangueraJ.jpg" alt="Manguera">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Manguera de Jardín 15m Reforzada</h4>
+                        <p class="product-price">$399.80</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="22" data-name="Tijeras de Podar Profesionales" data-price="299.80">
+                    <div class="product-discount">15% OFF</div>
+                    <div class="product-img">
+                        <img src="tijeras.jpg" alt="Tijeras de podar">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Tijeras de Podar Profesionales</h4>
+                        <p class="product-price">$299.80 <span></p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="23" data-name="Pala de Jardín con Mango Ergonómico" data-price="450.00">
+                    <div class="product-img">
+                        <img src="palaj.jpg" alt="Pala de jardín">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Pala de Jardín con Mango Ergonómico</h4>
+                        <p class="product-price">$450.00</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="24" data-name="Aspersor de Riego Circular" data-price="199.80">
+                    <div class="product-img">
+                        <img src="aspersor.jpg" alt="Aspersor">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-name">Aspersor de Riego Circular</h4>
+                        <p class="product-price">$199.80</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Añadir</button>
+                            <button class="view-details">Detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-category" id="contacto">
+            <h3 class="section-title">Contacto</h3>
+            <section class="hero">
+                <p>Me gustaría saber qué te parece esta página.</p>
+                <p>Si hay algo que crees que se pueda mejorar, ¡tus ideas y sugerencias serán más que bien recibidas!</p>
+                <p>Gracias por tomarte un rato para ayudarme con esto.</p>
+            </section>
+
+            <section id="formulario-coment" class="formulario-coment">
+                <h2>Envía tus comentarios</h2>
+                <form action="https://formsubmit.co/lupillosao0006@gmail.com" method="POST">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <input type="hidden" name="_subject" value="Nuevo comentario">
+                    <input type="hidden" name="_next" value="https://diegoavila21.github.io/PizzeriaMamamia/liga.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    <button type="submit" class="btn">Enviar comentario</button>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Acerca de Nosotros</h3>
+                <ul>
+                    <li><a href="#">Nuestra Historia</a></li>
+                    <li><a href="#">Misión y Visión</a></li>
+                    <li><a href="#">Nuestras Tiendas</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Servicio al Cliente</h3>
+                <ul>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Políticas de Devolución</a></li>
+                    <li><a href="#">Garantías</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="#">Ofertas del Mes</a></li>
+                    <li><a href="#">Catálogo en Línea</a></li>
+                    <li><a href="#">Blog de Bricolaje</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contáctanos</h3>
+                <ul>
+                    <li>Teléfono: +123 456 7890</li>
+                    <li>Email: contacto@ferreteriaChavez.com</li>
+                    <li>Dirección: Av. Principal 123, Ciudad, País</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
